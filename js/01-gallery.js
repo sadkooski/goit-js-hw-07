@@ -8,7 +8,15 @@ function createImagesGallery() {
   // console.log(gallery.classList);
 
   for (const item of galleryItems) {
-    const htmlImageString = `<li class="gallery__item"><img class="gallery__image" src="${item.preview}" alt="${item.description}"></li>`;
+    const htmlImageString = `<li class="gallery__item">
+     <a class="gallery__link" href="${item.original}">
+        <img 
+        class="gallery__image" 
+        src="${item.preview}" 
+        dat5a-source="${item.original}" 
+        alt="${item.description}" />
+     </a>
+   </li>`;
     gallery.innerHTML += htmlImageString;
   }
 }
