@@ -22,15 +22,17 @@ function createImagesGallery() {
 //
 createImagesGallery();
 
-function selectedImage(event) {
-  event.preventDefault();
-  if (event.target.nodeName !== "IMG") {
-    return;
-  }
-  console.log(event.target.alt);
-  let lightbox = new SimpleLightbox(".gallery a", {
-    captionDelay: 250,
-  });
-}
+new SimpleLightbox(".gallery a", {
+  captionDelay: 250,
+  captionsData: "alt",
+});
 
-gallery.addEventListener("click", selectedImage);
+// function selectedImage(event) {
+//   event.preventDefault();
+//   if (event.target.nodeName !== "IMG") {
+//     return;
+//   }
+//   console.log(event.target.alt);
+// }
+
+// gallery.addEventListener("click", selectedImage);
